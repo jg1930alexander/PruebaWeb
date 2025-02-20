@@ -1,14 +1,36 @@
+¡Claro! Aquí tienes un ejemplo de un juego sencillo en HTML que puedes probar. Es un juego de adivinanza de números:
+
+```html
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Juego de Adivinanza</title>
 </head>
 <body>
-    <h1>¡Hola, mundo!</h1>
-    <p>Esta es mi página web de prueba.</p>
-    <script src="script.js"></script>
+    <h1>Adivina el Número</h1>
+    <p>Introduce un número entre 1 y 100:</p>
+    <input type="number" id="guess" min="1" max="100">
+    <button onclick="checkGuess()">Adivinar</button>
+    <p id="result"></p>
+
+    <script>
+        const numberToGuess = Math.floor(Math.random() * 100) + 1;
+
+        function checkGuess() {
+            const userGuess = document.getElementById('guess').value;
+            const result = document.getElementById('result');
+
+            if (userGuess == numberToGuess) {
+                result.textContent = '¡Felicidades! Adivinaste el número.';
+            } else if (userGuess > numberToGuess) {
+                result.textContent = 'El número es más bajo.';
+            } else {
+                result.textContent = 'El número es más alto.';
+            }
+        }
+    </script>
 </body>
 </html>
+```
+
+Puedes copiar este código en un archivo HTML y abrirlo en tu navegador para jugar. ¿Te gustaría saber cómo agregar más características o tienes alguna otra pregunta?
